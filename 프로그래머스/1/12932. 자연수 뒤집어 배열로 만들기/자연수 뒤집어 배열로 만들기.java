@@ -1,19 +1,14 @@
-import java.util.*;
-
 class Solution {
-    public int[] solution(long n) {
-        // 편하게 추가, 삭제하기 위해 List 사용
-        List<Integer> ans = new ArrayList<>();
-        while (n >= 10) {
-            ans.add((int) (n % 10));
-            n = n / 10;
+  public int[] solution(long n) {
+      String tmp = "" + n;
+        int[] answer = new int[tmp.length()];
+        int cnt=0;
+
+        while(n>0) {
+            answer[cnt]=(int)(n%10);
+            n/=10;
+            cnt++;
         }
-        ans.add((int) n);
-        // 출력 형태 맞춰주기 위한 코드
-        int[] answer = new int[ans.size()];
-        for (int i = 0; i < ans.size(); i++) {
-            answer[i] = ans.get(i);
-        }
-        return answer;
-    }
+      return answer;
+  }
 }
