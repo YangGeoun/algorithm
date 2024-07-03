@@ -7,17 +7,10 @@ class Solution {
         int[] visited = new int[n];
         Queue<Integer> queue = new LinkedList<>();
         
-        while (cnt < n) {
-            int start = 0;
-            for (int i = 0; i < n; i++) {
-                if (visited[i] == 0) {
-                    start = i;
-                    visited[i] = 1;
-                    answer++;
-                    cnt++;
-                    break;
-                }
-            }
+        for (int j = 0; j < n; j++) {
+            if (visited[j] == 1) continue;
+            answer++;
+            int start = j;
             queue.add(start);
             while(!queue.isEmpty()) {
                 start = queue.poll();
